@@ -32,7 +32,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     testMatch: process.env.TEST_MATCH
       ? [process.env.TEST_MATCH]
       : ['<rootDir>/src/**/?(*.)(spec|test).{js,jsx}'],
-    testEnvironment: 'jest-environment-jsdom-fourteen',
+    testEnvironment: 'node',
     testURL: 'http://localhost',
     transform: {
       '^.+\\.(js|jsx)$': isEjecting

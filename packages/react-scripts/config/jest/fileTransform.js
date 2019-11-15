@@ -16,7 +16,11 @@ module.exports = {
       const pascalCaseFilename = camelcase(path.parse(filename).name, {
         pascalCase: true,
       });
-      const componentName = `Svg${pascalCaseFilename}`;
+
+      // Replace @ in filename
+      const validPascalFileName = pascalCaseFilename.replace('@', '');
+
+      const componentName = `Svg${validPascalFileName}`;
       return `const React = require('react');
       module.exports = {
         __esModule: true,

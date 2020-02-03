@@ -38,10 +38,10 @@ module.exports = (resolve, rootDir, isEjecting) => {
     setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
     testMatch: process.env.TEST_MATCH
       ? [process.env.TEST_MATCH]
-      : ['<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}'],
+      : ['<rootDir>/src/**/?(*.)(spec).{js,ts}'],
     testEnvironment: 'jest-environment-jsdom-fourteen',
     transform: {
-      '^.+\\.(js|jsx|ts|tsx)$': isEjecting
+      '^.+\\.(js|ts )$': isEjecting
         ? '<rootDir>/node_modules/babel-jest'
         : resolve('config/jest/babelTransform.js'),
       '^.+\\.css$': resolve('config/jest/cssTransform.js'),
